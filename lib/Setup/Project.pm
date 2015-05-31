@@ -102,12 +102,12 @@ sub infof {
 sub chmod_recursive {
     my ($self, $mode, $path) = @_;
 
+    $path = $self->_to_dst_file($path);
+
     if ($self->dry_run) {
         $self->infof("chmod_recursive $path");
         return;
     }
-
-    $path = catfile($self->{write_dir}, $path);
 
     File::Find::find(sub {
         my $name = $File::Find::name;
