@@ -4,7 +4,7 @@ use warnings;
 use Test::More;
 use Test::Deep;
 use Test::Exception;
-use Setup::Project::Template;
+use Setup::Project::Functions;
 
 
 cmp_deeply {equal_style(['a=1', 'b=2'])}, {
